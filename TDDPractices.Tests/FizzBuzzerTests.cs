@@ -3,19 +3,24 @@
 namespace TDDPractices.Tests;
 public class FizzBuzzerTests
 {
+	private readonly FizzBuzzer _fizzBuzzer;
 
-	[Theory]
+    public FizzBuzzerTests()
+    {
+		_fizzBuzzer = new FizzBuzzer();
+	}
+
+    [Theory]
 	[InlineData(1)]
 	[InlineData(2)]
 	[InlineData(8)]
 	public void Buzzer_NormalNumbers_ReturnsNumber(int inputNumber)
 	{
 		// Arrange
-		var buzzer = new FizzBuzzer();
 		string expectedOutPut = inputNumber.ToString();
 
 		// Act
-		string actualOutPut = buzzer.GetValue(inputNumber);
+		string actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
 		Assert.Equal(expectedOutPut, actualOutPut);
@@ -29,11 +34,10 @@ public class FizzBuzzerTests
 	public void Buzzer_WhenNumberIsMultiplesOf3_ReturnsFizz(int inputNumber)
 	{
 		// Arrange
-		var buzzer = new FizzBuzzer();
 		string expectedOutPut = "Fizz";
 
 		// Act
-		var actualOutPut = buzzer.GetValue(inputNumber);
+		var actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
 		Assert.Equal(expectedOutPut, actualOutPut);
@@ -47,11 +51,10 @@ public class FizzBuzzerTests
 	public void Buzzer_WhenNumberIsMultiplesOf5_ReturnsFizz(int inputNumber)
 	{
 		// Arrange
-		var buzzer = new FizzBuzzer();
 		string expectedOutPut = "Buzz";
 
 		// Act
-		var actualOutPut = buzzer.GetValue(inputNumber);
+		var actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
 		Assert.Equal(expectedOutPut, actualOutPut);
@@ -59,14 +62,16 @@ public class FizzBuzzerTests
 
 	[Theory]
 	[InlineData(15)]
+	[InlineData(30)]
+	[InlineData(45)]
+	[InlineData(75)]
 	public void Buzzer_WhenNumberIsDiv5AndDiv3_ReturnsFizz(int inputNumber)
 	{
 		// Arrange
-		var buzzer = new FizzBuzzer();
 		string expectedOutPut = "FizzBuzz";
 
 		// Act
-		var actualOutPut = buzzer.GetValue(inputNumber);
+		var actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
 		Assert.Equal(expectedOutPut, actualOutPut);
