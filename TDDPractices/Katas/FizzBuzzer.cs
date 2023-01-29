@@ -3,6 +3,6 @@ public class FizzBuzzer
 {
     public string GetValue(int input)
     {
-        throw new NotImplementedException();
+        return input.ToString();
     }
 }
