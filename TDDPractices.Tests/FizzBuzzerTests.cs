@@ -63,7 +63,7 @@ public class FizzBuzzerTests
 	{
 		// Arrange
 		var buzzer = new FizzBuzzer();
-		string expectedOutPut = "FizBuzz";
+		string expectedOutPut = "FizzBuzz";
 
 		// Act
 		var actualOutPut = buzzer.GetValue(inputNumber);

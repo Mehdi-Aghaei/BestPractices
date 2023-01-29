@@ -3,7 +3,11 @@ public class FizzBuzzer
 {
     public string GetValue(int input)
     {
-        if(input % 3 is 0)
+		if (input % 15 is 0)
+		{
+			return "FizzBuzz";
+		}
+		if (input % 3 is 0)
         {
             return "Fizz";
         }
@@ -12,6 +16,6 @@ public class FizzBuzzer
             return "Buzz";
         }
 
-        return input.ToString();
+		return input.ToString();
     }
 }
