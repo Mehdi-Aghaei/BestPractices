@@ -38,4 +38,22 @@ public class FizzBuzzerTests
 		// Assert
 		Assert.Equal(expectedOutPut, actualOutPut);
 	}
+
+	[Theory]
+	[InlineData(5)]
+	[InlineData(10)]
+	[InlineData(20)]
+	[InlineData(100)]
+	public void Buzzer_WhenNumberIsMultiplesOf5_ReturnsFizz(int inputNumber)
+	{
+		// Arrange
+		var buzzer = new FizzBuzzer();
+		string expectedOutPut = "Buzz";
+
+		// Act
+		var actualOutPut = buzzer.GetValue(inputNumber);
+
+		// Assert
+		Assert.Equal(expectedOutPut, actualOutPut);
+	}
 }
