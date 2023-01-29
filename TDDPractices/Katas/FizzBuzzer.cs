@@ -3,19 +3,21 @@ public class FizzBuzzer
 {
     public string GetValue(int input)
     {
-		if (input % 15 is 0)
-		{
-			return "FizzBuzz";
-		}
+        string outPut = string.Empty;
+
 		if (input % 3 is 0)
         {
-            return "Fizz";
+            outPut += "Fizz";
         }
 		if (input % 5 is 0)
         {
-            return "Buzz";
+            outPut += "Buzz";
+        }
+        if(string.IsNullOrEmpty(outPut))
+        {
+            outPut = input.ToString();
         }
 
-		return input.ToString();
+		return outPut;
     }
 }
