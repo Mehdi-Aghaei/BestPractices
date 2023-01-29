@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33318.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDPractices", "TDDPractices\TDDPractices.csproj", "{138A2EEB-63DE-4FED-9F24-1BAC31E64254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDDPractices.Tests", "TDDPractices.Tests\TDDPractices.Tests.csproj", "{8B071250-DA2C-4781-9BF0-867D3F632668}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{138A2EEB-63DE-4FED-9F24-1BAC31E64254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{138A2EEB-63DE-4FED-9F24-1BAC31E64254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{138A2EEB-63DE-4FED-9F24-1BAC31E64254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{138A2EEB-63DE-4FED-9F24-1BAC31E64254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B071250-DA2C-4781-9BF0-867D3F632668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B071250-DA2C-4781-9BF0-867D3F632668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B071250-DA2C-4781-9BF0-867D3F632668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B071250-DA2C-4781-9BF0-867D3F632668}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {307AD3FF-23BC-429E-8342-65F07AFCD379}
+	EndGlobalSection
+EndGlobal
