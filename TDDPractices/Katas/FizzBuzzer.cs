@@ -7,7 +7,11 @@ public class FizzBuzzer
         {
             return "Fizz";
         }
-        
-        return input.ToString();
+		if (input % 5 is 0)
+        {
+            return "Buzz";
+        }
+
+			return input.ToString();
     }
 }
