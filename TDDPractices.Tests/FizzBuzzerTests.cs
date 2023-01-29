@@ -37,6 +37,5 @@ public class FizzBuzzerTests
 
 		// Assert
 		Assert.Equal(expectedOutPut, actualOutPut);
-	
 	}
 }
