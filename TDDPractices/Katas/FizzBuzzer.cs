@@ -12,6 +12,6 @@ public class FizzBuzzer
             return "Buzz";
         }
 
-			return input.ToString();
+        return input.ToString();
     }
 }

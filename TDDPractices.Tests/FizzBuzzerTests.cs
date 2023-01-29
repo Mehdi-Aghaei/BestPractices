@@ -56,4 +56,19 @@ public class FizzBuzzerTests
 		// Assert
 		Assert.Equal(expectedOutPut, actualOutPut);
 	}
+
+	[Theory]
+	[InlineData(15)]
+	public void Buzzer_WhenNumberIsDiv5AndDiv3_ReturnsFizz(int inputNumber)
+	{
+		// Arrange
+		var buzzer = new FizzBuzzer();
+		string expectedOutPut = "FizBuzz";
+
+		// Act
+		var actualOutPut = buzzer.GetValue(inputNumber);
+
+		// Assert
+		Assert.Equal(expectedOutPut, actualOutPut);
+	}
 }
