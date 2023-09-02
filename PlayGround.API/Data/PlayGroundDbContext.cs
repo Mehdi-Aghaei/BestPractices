@@ -5,8 +5,8 @@ namespace PlayGround.API.Data;
 
 public class PlayGroundDbContext : DbContext
 {
-    public DbSet<Poster> Todos => Set<Poster>();
-    public DbSet<ImageInfo> Friends => Set<ImageInfo>();
+    public DbSet<Poster> Posters => Set<Poster>();
+    public DbSet<ImageInfo> ImageInfos => Set<ImageInfo>();
 
     public PlayGroundDbContext(DbContextOptions<PlayGroundDbContext> options)
         : base(options)

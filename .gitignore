@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+*.db
+/PlayGround.API/PlayGrounds.db-shm
+/PlayGround.API/PlayGrounds.db-wal

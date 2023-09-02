@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PlayGround.API.Data;
+using PlayGround.API.Routes;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApiDatabase");
@@ -19,4 +20,11 @@ if (app.Environment.IsDevelopment())
 	app.UseSwaggerUI();
 }
 
+
+app.MapGet("/", ( ) => "API is alive.");
+app.MapPosters();
+
 app.UseHttpsRedirection();
+
+
+app.Run();
