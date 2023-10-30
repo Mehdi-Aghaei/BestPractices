@@ -23,7 +23,7 @@ public class FizzBuzzerTests
 		string actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
-		Assert.Equal(expectedOutPut, actualOutPut);
+		actualOutPut.Should().Be(expectedOutPut);
 	}
 
 	[Theory]
@@ -40,7 +40,7 @@ public class FizzBuzzerTests
 		var actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
-		Assert.Equal(expectedOutPut, actualOutPut);
+		actualOutPut.Should().Be(expectedOutPut);
 	}
 
 	[Theory]
@@ -57,7 +57,7 @@ public class FizzBuzzerTests
 		var actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
-		Assert.Equal(expectedOutPut, actualOutPut);
+		actualOutPut.Should().Be(expectedOutPut);
 	}
 
 	[Theory]
@@ -74,6 +74,6 @@ public class FizzBuzzerTests
 		var actualOutPut = _fizzBuzzer.GetValue(inputNumber);
 
 		// Assert
-		Assert.Equal(expectedOutPut, actualOutPut);
+		actualOutPut.Should().Be(expectedOutPut);
 	}
 }

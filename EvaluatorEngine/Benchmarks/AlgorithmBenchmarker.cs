@@ -310,7 +310,7 @@ public class AlgorithmBenchmarker
         rcrvjpSvScbRbBvbDBPG
         ZZJzSHpzPrJzHFmMVMFmHCLNtV
         """;
-	char[] ranks = { 'a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o',
+	readonly char[] ranks = { 'a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o',
 'p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
 	[Benchmark]
@@ -320,7 +320,7 @@ public class AlgorithmBenchmarker
 		foreach (var element in Input.Split("\n"))
 		{
 
-			var firstPart = string.Join("", element.Substring(0, element.Length / 2).Distinct());
+			var firstPart = string.Join("", element[..(element.Length / 2)].Distinct());
 			var secondPart = string.Join("", element.Substring(element.Length / 2, element.Length / 2).Distinct());
 			for (int i = 0; i < firstPart.Length; i++)
 			{
@@ -356,7 +356,7 @@ public class AlgorithmBenchmarker
 					{
 						bitmap |= 1UL << w;
 					}
-					else if ((bitmap & (ulong)(1UL << w)) != 0)
+					else if ((bitmap & 1UL << w) != 0)
 					{
 						result += w;
 						break;

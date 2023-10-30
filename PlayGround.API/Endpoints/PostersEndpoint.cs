@@ -2,7 +2,7 @@
 
 namespace PlayGround.API.Routes;
 
-public static class PosterEndpoints
+public static class PostersEndpoint
 {
 	public static RouteGroupBuilder MapPosters(this IEndpointRouteBuilder route)
 	{

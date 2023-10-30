@@ -11,7 +11,7 @@ using PlayGround.API.Data;
 namespace PlayGround.API.Data.Migrations
 {
     [DbContext(typeof(PlayGroundDbContext))]
-    [Migration("20230902103743_Init")]
+    [Migration("20230905114450_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -49,6 +49,9 @@ namespace PlayGround.API.Data.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
