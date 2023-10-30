@@ -1,3 +1,15 @@
-@page "/Home"
+@page "/"
+@inject TestClient TestClient
 
-<h1>Hi home</h1>
+<h1 class="text-yellow-600">From API: @Result</h1>
+
+
+@code{
+
+	public string Result { get; set; } = "junk";
+
+	protected override async Task OnInitializedAsync()
+	{
+		Result = await TestClient.GetContent();
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"name": "playground",
+	"version": "1.0.0",
+	"description": "This package will take care of style",
+	"scripts": {
+		"style-prod": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --minify",
+		"style-dev": "npx tailwindcss -i ./Styles/app.css -o ./wwwroot/css/app.css --watch"
+	},
+	"author": "Mehdi Aghaei",
+	"license": "ISC",
+	"dependencies": {
+		"tailwindcss": "^3.3.5"
+	}
+}
