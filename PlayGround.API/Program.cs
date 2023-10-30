@@ -14,9 +14,8 @@ builder.Services.AddRazorComponents()
 
 var connectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 builder.Services.AddSqlite<PlayGroundDbContext>(connectionString);
-
-builder.Services.AddHttpClient();
 builder.Services.AddScoped<TestClient>();
+builder.Services.AddHttpClient();
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 

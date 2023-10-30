@@ -1,6 +1,8 @@
 @page "/"
+@rendermode InteractiveServer
 @inject TestClient TestClient
 
+<button @onclick="SayHi">hi</button>
 <h1 class="text-yellow-600">From API: @Result</h1>
 
 
@@ -8,8 +10,7 @@
 
 	public string Result { get; set; } = "junk";
 
-	protected override async Task OnInitializedAsync()
-	{
+	private async Task SayHi(){
 		Result = await TestClient.GetContent();
 	}
 }

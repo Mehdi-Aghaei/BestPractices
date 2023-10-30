@@ -1,18 +1,11 @@
 ﻿namespace PlayGround.Client;
 
-public sealed class TestClient
+public class TestClient(HttpClient httpClient)
 {
-	private readonly HttpClient httpClient;
-
-	public TestClient(HttpClient httpClient)
-	{
-		this.httpClient = httpClient;
-	}
-
 	public async Task<string> GetContent()
 	{
-		var result = await this.httpClient.GetStringAsync("/api");
+		var result = await httpClient.GetAsync("api");
 
-		return result;
+		return result!.Content!.ToString();
 	}
 }
