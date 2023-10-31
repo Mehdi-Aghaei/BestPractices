@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluatorEngine", "Evaluato
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TDDPractices.Tests", "TDDPractices.Tests\TDDPractices.Tests.csproj", "{EC1AA938-2AD6-4012-A916-C9C90D3CE68A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayGround.Client", "PlayGround.Client\PlayGround.Client.csproj", "{D934DDE9-CEE5-41D2-BD3F-5C8AB9374258}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayGround.Client", "PlayGround.Client\PlayGround.Client.csproj", "{D934DDE9-CEE5-41D2-BD3F-5C8AB9374258}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayGround.Shared", "PlayGround.Shared\PlayGround.Shared.csproj", "{5736CDB1-6E36-49A4-9287-F3CBECFFF977}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D934DDE9-CEE5-41D2-BD3F-5C8AB9374258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D934DDE9-CEE5-41D2-BD3F-5C8AB9374258}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D934DDE9-CEE5-41D2-BD3F-5C8AB9374258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5736CDB1-6E36-49A4-9287-F3CBECFFF977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5736CDB1-6E36-49A4-9287-F3CBECFFF977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5736CDB1-6E36-49A4-9287-F3CBECFFF977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5736CDB1-6E36-49A4-9287-F3CBECFFF977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

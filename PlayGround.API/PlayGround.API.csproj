@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PlayGround.Client\PlayGround.Client.csproj" />
+    <ProjectReference Include="..\PlayGround.Shared\PlayGround.Shared.csproj" />
   </ItemGroup>
 
 </Project>

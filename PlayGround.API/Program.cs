@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.EntityFrameworkCore;
 using PlayGround.API.Components;
 using PlayGround.API.Data;
 using PlayGround.API.Routes;
 using PlayGround.Client;
 using PlayGround.Client.Components;
+using PlayGround.Shared;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,8 +16,8 @@ builder.Services.AddRazorComponents()
 
 var connectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 builder.Services.AddSqlite<PlayGroundDbContext>(connectionString);
-builder.Services.AddScoped<TestClient>();
 builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<IClient,TestClient>();
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen();
 
@@ -37,7 +39,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapGet("/api", ( ) => "API is alive.");
+app.MapGet("/api", (int id ) => { 
+	id += 1; 
+	return $"API is alive: {id += 1}"; });
 app.MapPosters();
 app.MapImages();
 app.MapUsers();

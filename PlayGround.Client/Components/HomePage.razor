@@ -1,16 +1,18 @@
 @page "/"
+@using PlayGround.Shared
+@inject IClient TestClient
 @rendermode InteractiveServer
-@inject TestClient TestClient
 
-<button @onclick="SayHi">hi</button>
+<button class="w-full text-white bg-blue-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center " @onclick="SayHi">hi</button>
 <h1 class="text-yellow-600">From API: @Result</h1>
-
 
 @code{
 
 	public string Result { get; set; } = "junk";
 
 	private async Task SayHi(){
-		Result = await TestClient.GetContent();
+		var a = await TestClient.GetAsync();
+		Result = a.Item2;
+
 	}
 }
