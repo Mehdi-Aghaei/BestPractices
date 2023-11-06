@@ -1,3 +1,5 @@
+using ComponentsLibrary;
+using ComponentsLibrary.Clients;
 using Microsoft.EntityFrameworkCore;
 using PlayGround.API.Components;
 using PlayGround.API.Data;
@@ -12,12 +14,19 @@ builder.Services.AddRazorComponents()
 	.AddInteractiveServerComponents()
 	.AddInteractiveWebAssemblyComponents();
 
+var serverUrl = builder.Configuration["ServerUrl"] ?? throw new InvalidOperationException("Todo API URL is not configured");
+
 var connectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 builder.Services.AddSqlite<PlayGroundDbContext>(connectionString);
+
+builder.Services.AddScoped<ApiClient>();
 builder.Services.AddScoped<TestClient>();
-builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("Test", client =>
+{
+	client.BaseAddress = new (serverUrl);
+});
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -37,7 +46,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapGet("/api", ( ) => "API is alive.");
+app.MapGet("/api", () => "API is alive.");
 app.MapPosters();
 app.MapImages();
 app.MapUsers();
@@ -45,6 +54,7 @@ app.MapUsers();
 app.MapRazorComponents<App>()
 	.AddInteractiveServerRenderMode()
 	.AddInteractiveWebAssemblyRenderMode()
-	.AddAdditionalAssemblies(typeof(HomePage).Assembly);
+	.AddAdditionalAssemblies(typeof(HomePage).Assembly)
+	.AddAdditionalAssemblies(typeof(Counter).Assembly);
 
 app.Run();

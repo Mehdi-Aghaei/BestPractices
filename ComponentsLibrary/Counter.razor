@@ -1,0 +1,21 @@
+﻿@page "/counter"
+
+@rendermode InteractiveServer
+@inject ApiClient ClientFactory
+
+
+<button @onclick="SayHi">ClickMe</button>
+
+<h1 class="text-yellow-600">From API: @Result</h1>
+
+
+@code
+{
+	public string Result { get; set; } = "";
+
+	async Task SayHi()
+	{
+
+		Result = await ClientFactory.GetContent();
+	}
+}

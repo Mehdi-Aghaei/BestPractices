@@ -1,6 +1,6 @@
 @page "/"
-@rendermode InteractiveServer
-@inject TestClient TestClient
+@inject TestClient HttpClient;
+@rendermode InteractiveWebAssembly
 
 <button @onclick="SayHi">hi</button>
 <h1 class="text-yellow-600">From API: @Result</h1>
@@ -11,6 +11,6 @@
 	public string Result { get; set; } = "junk";
 
 	private async Task SayHi(){
-		Result = await TestClient.GetContent();
+		Result =  await HttpClient.GetContent();
 	}
 }
