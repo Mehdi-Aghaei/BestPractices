@@ -1,9 +1,21 @@
 ﻿namespace PlayGround.Client;
 
-public class TestClient(HttpClient httpClient)
+public class TestService : ITestService
 {
-	public async Task<string> GetContent()
+    private readonly HttpClient _httpClient;
+
+    public TestService(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public async Task<string> GetContent()
 	{
-		return await httpClient.GetStringAsync("api");
+		return await _httpClient.GetStringAsync("api");
 	}
+}
+
+public interface ITestService
+{
+    Task<string> GetContent();
 }

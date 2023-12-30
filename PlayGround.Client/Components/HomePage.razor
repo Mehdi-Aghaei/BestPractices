@@ -1,8 +1,10 @@
 @page "/"
-@inject TestClient HttpClient;
+@inject ITestService HttpClient;
 @rendermode InteractiveWebAssembly
 
 <button @onclick="SayHi">hi</button>
+<br/>
+
 <h1 class="btn btn-primary text-yellow-600">From API: @Result</h1>
 
 

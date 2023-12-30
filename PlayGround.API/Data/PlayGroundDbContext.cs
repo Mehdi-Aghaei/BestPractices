@@ -3,14 +3,8 @@ using PlayGround.API.Models;
 
 namespace PlayGround.API.Data;
 
-public class PlayGroundDbContext : DbContext
+public class PlayGroundDbContext(DbContextOptions<PlayGroundDbContext> options) : DbContext(options)
 {
     public DbSet<Poster> Posters => Set<Poster>();
     public DbSet<ImageInfo> ImageInfos => Set<ImageInfo>();
-
-    public PlayGroundDbContext(DbContextOptions<PlayGroundDbContext> options)
-        : base(options)
-    {
-
-    }
 }

@@ -1,9 +1,8 @@
 using ComponentsLibrary;
 using ComponentsLibrary.Clients;
-using Microsoft.EntityFrameworkCore;
 using PlayGround.API.Components;
 using PlayGround.API.Data;
-using PlayGround.API.Routes;
+using PlayGround.API.Endpoints;
 using PlayGround.Client;
 using PlayGround.Client.Components;
 
@@ -20,7 +19,7 @@ var connectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 builder.Services.AddSqlite<PlayGroundDbContext>(connectionString);
 
 builder.Services.AddScoped<ApiClient>();
-builder.Services.AddScoped<TestClient>();
+builder.Services.AddSingleton<ITestService, TestService>();
 builder.Services.AddHttpClient("Test", client =>
 {
 	client.BaseAddress = new (serverUrl);
