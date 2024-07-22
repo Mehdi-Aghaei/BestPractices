@@ -1,6 +1,6 @@
 ﻿using PlayGround.API.Data;
 
-namespace PlayGround.API.Routes;
+namespace PlayGround.API.Endpoints;
 
 public static class PostersEndpoint
 {
