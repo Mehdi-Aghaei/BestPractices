@@ -1,5 +1,6 @@
 @page "/"
-@inject ITestService HttpClient;
+@using PlayGround.Client.Services
+@inject ITestClient HttpClient;
 @rendermode InteractiveWebAssembly
 
 <button @onclick="SayHi">hi</button>

@@ -1,11 +1,13 @@
 #pragma warning disable CA1506
 using ComponentsLibrary;
 using ComponentsLibrary.Clients;
+
 using PlayGround.API.Components;
 using PlayGround.API.Data;
 using PlayGround.API.Endpoints;
-using PlayGround.Client;
+using PlayGround.API.Routes;
 using PlayGround.Client.Components;
+using PlayGround.Client.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +22,7 @@ var connectionString = builder.Configuration.GetConnectionString("ApiDatabase");
 builder.Services.AddSqlite<PlayGroundDbContext>(connectionString);
 
 builder.Services.AddScoped<ApiClient>();
-builder.Services.AddSingleton<ITestService, TestService>();
+builder.Services.AddSingleton<ITestClient, TestClient>();
 builder.Services.AddHttpClient("Test", client =>
 {
 	client.BaseAddress = new Uri(serverUrl);

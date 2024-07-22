@@ -320,23 +320,24 @@ public class AlgorithmBenchmarker
 		foreach (var element in Input.Split("\n"))
 		{
 
-			string firstPart = string.Join("", element[..(element.Length / 2)].Distinct());
-			string secondPart = string.Join("", element.Substring(element.Length / 2, element.Length / 2).Distinct());
-			foreach (var t in firstPart)
+			var firstPart = string.Join("", element[..(element.Length / 2)].Distinct());
+			var secondPart = string.Join("", element.Substring(element.Length / 2, element.Length / 2).Distinct());
+			for (int i = 0; i < firstPart.Length; i++)
 			{
-				if (secondPart.Contains(t))
+
+				if (secondPart.Contains(firstPart[i]))
 				{
-					result += Array.IndexOf(ranks, t) + 1;
+					result += Array.IndexOf(ranks, firstPart[i]) + 1;
 				}
 			}
 		}
-		
+
 		return result;
 	}
 
-    [Benchmark]
-    public int MarcinSolution()
-    {
+	[Benchmark]
+	public int MarcinSolution()
+	{
 		int result = 0;
 		int startIdx = 0;
 		ulong bitmap = 0;

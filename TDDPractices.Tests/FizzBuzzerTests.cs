@@ -5,12 +5,12 @@ public class FizzBuzzerTests
 {
 	private readonly FizzBuzzer _fizzBuzzer;
 
-    public FizzBuzzerTests()
-    {
+	public FizzBuzzerTests()
+	{
 		_fizzBuzzer = new FizzBuzzer();
 	}
 
-    [Theory]
+	[Theory]
 	[InlineData(1)]
 	[InlineData(2)]
 	[InlineData(8)]
