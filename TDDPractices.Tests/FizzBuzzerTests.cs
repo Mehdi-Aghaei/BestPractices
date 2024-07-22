@@ -1,4 +1,4 @@
-﻿using TDDPractices.Katas;
+using TDDPractices.Katas;
 
 namespace TDDPractices.Tests;
 public class FizzBuzzerTests

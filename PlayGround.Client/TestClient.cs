@@ -1,4 +1,4 @@
-﻿namespace PlayGround.Client;
+namespace PlayGround.Client;
 
 public class TestService : ITestService
 {

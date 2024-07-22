@@ -1,3 +1,4 @@
+#pragma warning disable CA1506
 using ComponentsLibrary;
 using ComponentsLibrary.Clients;
 using PlayGround.API.Components;
@@ -22,7 +23,7 @@ builder.Services.AddScoped<ApiClient>();
 builder.Services.AddSingleton<ITestService, TestService>();
 builder.Services.AddHttpClient("Test", client =>
 {
-	client.BaseAddress = new (serverUrl);
+	client.BaseAddress = new Uri(serverUrl);
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -57,3 +58,4 @@ app.MapRazorComponents<App>()
 	.AddAdditionalAssemblies(typeof(Counter).Assembly);
 
 app.Run();
+#pragma warning restore CA1506
